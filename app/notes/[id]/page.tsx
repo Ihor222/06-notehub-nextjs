@@ -6,7 +6,7 @@ type NoteDetailsProps = {
   params: { id: string };
 };
 
-async function NoteDetails({ params }: NoteDetailsProps) {
+async function NoteDetails({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const queryClient = new QueryClient();
