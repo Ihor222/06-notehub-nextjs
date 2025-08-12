@@ -7,9 +7,9 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
-async function NoteDetails({ params }: { params: { id: string } }) {
-  const { id } = params;
-
+const NoteDetails = async ({ params }: Props) => {
+  const { id } = await params;
+  console.log('note id:', id);
   const queryClient = new QueryClient();
 
   if (!queryClient.getQueryData(["note", id])) {
