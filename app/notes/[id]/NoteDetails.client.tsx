@@ -12,7 +12,8 @@ export default function NoteDetailsClient({ id }: Props) {
   const noteQuery = useQuery({
     queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
-    refetchOnWindowFocus: false, // змінив опцію
+    refetchOnWindowFocus: false,
+    refetchOnMount: false, 
   });
 
   if (noteQuery.isLoading) {

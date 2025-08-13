@@ -1,11 +1,11 @@
 import css from "./SearchBox.module.css";
 
-type Props = {
+interface SearchBoxProps {
   value: string;
   onSearch: (query: string) => void;
-};
+}
 
-const SearchBox = ({ value, onSearch }: Props) => {
+const SearchBox = ({ value, onSearch }: SearchBoxProps) => {
   function onInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const currentValue = e.currentTarget.value;
     onSearch(currentValue);

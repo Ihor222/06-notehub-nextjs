@@ -1,14 +1,17 @@
 import css from "./Pagination.module.css";
 import ReactPaginate from "react-paginate";
 
-type PaginationProps = {
+interface PaginationProps {
   totalNumberOfPages: number;
   currentActivePage: number;
   setPage: (pageNumber: number) => void;
-};
+}
 
-export default function Pagination({ totalNumberOfPages, currentActivePage, setPage }: PaginationProps) {
-  
+export default function Pagination({
+  totalNumberOfPages,
+  currentActivePage,
+  setPage,
+}: PaginationProps) {
   const handlePageClick = (event: { selected: number }) => {
     // selected індексує з 0, тому додаємо 1
     setPage(event.selected + 1);
